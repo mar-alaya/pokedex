@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavBar } from "./components/navbar.public.comp";
 import { PokeCardView } from "./components/cards/pokecard.view";
 import { Header } from "./components/shared/header.comp";
+import { PokecardContainer } from "./components/cards/pokecard.container";
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
@@ -34,11 +35,7 @@ function App() {
         <Header />
       </header>
       <main className="text-center">
-        <div>
-          {pokemons.map((pokemon) => {
-            return <PokeCardView key={pokemon.id} pokemon={pokemon} />;
-          })}
-        </div>
+        <PokecardContainer pokemons={pokemons} />
       </main>
     </>
   );
